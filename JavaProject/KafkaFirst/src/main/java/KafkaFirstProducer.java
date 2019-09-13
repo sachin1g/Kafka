@@ -39,7 +39,7 @@ public class KafkaFirstProducer {
         int i=0;
 
           for(i=0;i<numEvents;i++){
-              producer.send(new ProducerRecord<>(topicName,i,"message"+i));
+              producer.send(new ProducerRecord<>(topicName,i,"new"+i));
           }
 
         logger.info("Finished - Closing Kafka Producer.");
