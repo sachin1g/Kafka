@@ -1,0 +1,17 @@
+#Start zookeeper
+zookeeper-start.bat zookeeper.properties
+
+#start kafka broker
+kafka-server-start.bat server.properties
+
+#Look for active brokers
+zookeeper-shell.bat localhost:2181 ls /brokers/ids
+
+#Create topic
+kafka-topics.bat --zookeeper localhost:2181 --create --topic firsttopic --partitions 1 --replication-factor 1
+
+#Commmand to start a consumer for topic "firsttopic"
+kafka-console-consumer.bat  --bootstrap-server localhost:9092 --topic firsttopic --from-beginning
+
+#To start a producer for topic "firsttopic"
+kafka-console-producer.bat --broker-list localhost:9092 --topic firsttopic
