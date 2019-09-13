@@ -9,3 +9,6 @@ It also has sample java project for kafka producer and consumer.
 
 
 Config files you can check in config directory.
+
+Java project include a directory whihc has zookeeper and kafka server start scripts.
+Update the topicName and ports along with path to configs file.
