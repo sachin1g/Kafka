@@ -2,19 +2,12 @@ package procom;
 
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.IntegerSerializer;
-import org.apache.kafka.common.serialization.StringSerializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import serializers.CustomSerializer;
 
 import java.util.Properties;
 
-/**
- * A Kafka producer that sends numEvents (# of messages) to a given topicName
- *
- * @author prashant
- * @author www.learningjournal.guru
- */
 public class KafkaProducerCustomSerializer {
     private static final Logger logger = LogManager.getLogger(KafkaProducerCustomSerializer.class);
     public final static String applicationID = "HelloProducer";

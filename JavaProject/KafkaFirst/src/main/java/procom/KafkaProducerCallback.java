@@ -16,7 +16,9 @@ public class KafkaProducerCallback {
 
         logger.info("Creating Kafka async with callback Producer...");
         System.out.println("Creating kafka async with callback producer");
+
         Properties props = new Properties();
+
         props.put(ProducerConfig.CLIENT_ID_CONFIG, applicationID);
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, IntegerSerializer.class.getName());
@@ -39,7 +41,6 @@ public class KafkaProducerCallback {
         for(int i=0;i<MessageCount;i++){
             producer.send(new ProducerRecord<>(topicName,i,"async with callback"+i),new DemoProducerCallback());
         }
-
         logger.info("Finished - Closing Kafka Producer.");
         producer.close();
 

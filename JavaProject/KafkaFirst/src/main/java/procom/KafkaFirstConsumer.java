@@ -2,24 +2,17 @@ package procom;
 
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.consumer.ConsumerConfig;;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.common.serialization.IntegerDeserializer;
-import org.apache.kafka.common.serialization.IntegerSerializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
-import org.apache.kafka.common.serialization.StringSerializer;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import java.util.Collections;
-import java.util.List;
 import java.util.Properties;
 
 public class KafkaFirstConsumer {
     public static void main(String[] args) {
         Properties kafkaProps=new Properties();
+
         kafkaProps.setProperty("bootstrap.servers","localhost:9092");
         kafkaProps.setProperty("group.id","test-consumer-group");
         kafkaProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, IntegerDeserializer.class.getName());
@@ -40,6 +33,5 @@ public class KafkaFirstConsumer {
                 System.out.println(record.value().toString());
             }
         }
-
     }
 }
