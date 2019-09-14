@@ -1,13 +1,12 @@
-import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerConfig;
-import org.apache.kafka.clients.producer.ProducerRecord;
+package procom;
+
+import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.IntegerSerializer;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Properties;
-import java.util.Scanner;
 
 /**
  * A Kafka producer that sends numEvents (# of messages) to a given topicName
@@ -33,7 +32,6 @@ public class KafkaFirstProducer {
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
         KafkaProducer<Integer, String> producer = new KafkaProducer<>(props);
-
         logger.info("Start sending messages...");
         System.out.println("Start Sending message");
         int i=0;

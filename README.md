@@ -17,3 +17,8 @@ Update the topicName and ports along with path to configs file.
 
 
 Thanks to https://www.learningjournal.guru/ for detailed tutorials.
+
+
+Examples in the java project are inspired by "Kafka Definative Guide"
+
+*Feel Free To Update*
