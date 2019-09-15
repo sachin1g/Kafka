@@ -5,7 +5,7 @@
 **OS** : WIndows 7 <br>
 **Build Tool** : Maven 3 <br>
 
-For installlation please refer to learningjournal.guru 
+For installlation please refer to https://www.learningjournal.guru 
 
 This repository covers the documents and config for kafka installation on windows.
 It also has sample java project for kafka producer and consumer.
